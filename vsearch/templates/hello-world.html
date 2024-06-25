@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Vector search</title>
+  </head>
+  <body>
+    <header class="container">
+      <h1>Vector search comparison</h1>
+    </header>
+    <main class="container">
+      <section>
+        <form>
+          <fieldset role="search">
+            <input type="search" name="query" id="query" />
+            <input type="submit" value="Search" />
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <h2>Search Results</h2>
+        <div class="grid">
+          <article>
+            <header>
+              <h3>Regular vector search</h3>
+            </header>
+            <output id="vector"></output>
+          </article>
+          <article>
+            <header>
+              <h3>ColBERT</h3>
+            </header>
+            <output id="colbert"></output>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="container">
+      <p style="text-align: center">
+        <small>
+          Created by <a href="https://twitter.com/philnash">phil nash</a> using
+          DataStax Astra DB</small
+        >
+      </p>
+    </footer>
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </body>
+</html>
